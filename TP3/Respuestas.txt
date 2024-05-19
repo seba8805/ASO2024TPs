@@ -1,0 +1,71 @@
+1 ¿Qué se puede notar con respecto al tiempo de ejecución? ¿Es predecible?
+Si, es predecible el tiempo de ejecucion de la funcion tarea 2 y de la funcion tarea 3. 
+En cuanto a la funcion tarea 1 se observa al ejecutar varias veces el codigo que hay variaciones de 1 o 2 segundos en el tiempo de ejecucion.
+
+2 Nombrar un proceso o función de la vida real que pueden ser considerados procesos de “máxima
+velocidad posible” que dependen casi exclusivamente de la velocidad de la máquina que los ejecuta (ej.
+Ordenar una lista)
+
+Ej:comprimir un archivo, copiar un archivo de una ubicacion a otra.
+
+3 Nombrar un proceso o función de la vida real que pueden ser considerados procesos de “velocidad de
+respuesta no dependiente de la velocidad de procesamiento” o que sea de naturaleza impredecible o
+externa (ej. Leer un archivo externo)
+
+Ej:La interaccion con una aplicacion. La velocidad con que se procesan los datos no la determina
+solo el procesador del sistema sino tambien la latencia de la red, la carga de datos al servidor de la aplicacion y su velocidad de respuesta.
+
+
+Tareas con hilo
+
+1 ¿Qué se puede notar con respecto al tiempo de ejecución? ¿Se mejoró el tiempo de respuesta con
+respecto al mismo programa sin hilos?
+El tiempo de ejecucion es mas predecible y se nota una mejora en el tiempo de respuesta en comparacion al mismo programa sin hilos.
+
+2 ¿Completan las funciones su ejecución en el orden establecido?
+No completan su ejecucion en el orden establecido. La funcion tarea_1 es la primera en iniciar y la ultima en finalizar.
+
+
+3 Nombrar un escenario real donde el multi-hilado puede mejorar considerablemente el tiempo de
+respuesta de un sistema  (ej. Carga de una página WEB en un navegador)
+
+Un escenario real donde el uso de hilos puede mejorar considerablemente el tiempo de respuesta de un sistema 
+es en el procesamiento de solicitudes en un servidor web, el cual recibe numerosas solicitudes 
+para cargar diferentes recursos, como páginas HTML, imágenes, archivos CSS y JavaScript.
+
+
+sumador-restador CON race
+
+1-¿Qué se puede notar con respecto al tiempo de ejecución?
+El tiempo de ejecucion varia entre una ejecucion y otra, a veces es menor y otras mayor.
+
+- ¿Qué sucede con el valor final del acumulador?
+El valor es 0
+
+- ¿Por qué sucede esto?
+
+Las funciones sumador() y restador() ambas incrementan y disminuyen acumulador en el mismo valor (5) 
+y misma cantidad de iteraciones (1,000,000), 
+Esto provoca la cancelacion mutua de las operaciones.
+
+- ¿Cómo se puede corregir esta condición de carrera sin dejar de utilizar hilos?
+Con una proteccion, un bloqueo para sincronizar el acceso a la variable acumulador.
+
+
+sumador-restador_SIN_race
+
+- ¿Qué sucede con el valor final del acumulador?
+El valor final del acumulador generalmente varia entre ejecuciones, se repite muy ocacionalmente.
+ 
+- ¿Qué se puede notar con respecto al tiempo de ejecución?
+El tiempo de ejecucion es casi inmediato. 
+
+
+
+
+
+
+
+
+
+
